@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/slate_gray"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@color/gray"
+        android:paddingHorizontal="15dp"
+        android:paddingBottom="20dp"
+        app:titleTextColor="@color/deep_orange">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="Navigate back"
+            android:onClick="onClickBackArrow"
+            android:scaleType="centerCrop"
+            android:src="@drawable/arrow_back" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/suspects_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/back_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/evidence_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/my_toolbar"
+        android:layout_above="@+id/choose_suspect_btn"
+        android:background="@color/slate_gray"
+        android:layout_centerHorizontal="true"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/choose_suspect_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp"
+        app:backgroundTint="@color/item_disabled"
+        app:cornerRadius="20dp"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="Who is guilty?"
+        android:textColor="@color/item_title_disabled"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:onClick="onChooseSuspectBtnClick"
+        />
+
+</RelativeLayout>

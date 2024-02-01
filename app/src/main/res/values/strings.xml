@@ -1,0 +1,275 @@
+<resources>
+    <string name="app_name">Mayor’s Enigma</string>
+    <string name="suspect1">Jakob Jonas</string>
+    <string name="suspect2">Immanuel Nils</string>
+    <string name="suspect3">Clara Theresa</string>
+    <string name="suspect4">Alexander Philipp</string>
+    <string name="dummy_suspect_desc">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </string>
+
+    <string name="jakob_desc">
+        Hello, I am Jakob Jonas, a 35-year-old wealthy industrialist, and I am at the helm of a prominent manufacturing company in Dresden, Jonas Metalworks. Born and raised in the city, my roots intertwine with the local industry. In addition, I am a jazz music enthusiast and an amateur saxophonist, finding solace in the art form. My company, a cornerstone of Dresden’s economic landscape, has been under scrutiny due to alleged unethical labour practices.\n\nAs the owner of the manufacturing giant, my company and I have clashed with Mayor Reinhardt Vogel over the implementation of stringent labour laws. The mayor’s advocacy for workers’ rights and improved working conditions directly threatened my industrial practices, posing a considerable financial risk to my business. Fearing economic repercussions and the tarnishing of my reputation, I perceive the mayor as a formidable adversary hindering the growth of my industry.
+    </string>
+
+    <string name="clara_desc">
+        Hi, this is Clara Theresa, a 38-year-old political activist with a cosmopolitan upbringing, and I am half-French and half-German. Beyond my fervent involvement in political salons and advocacy for social justice, I perceive Mayor Reinhardt Vogel as an impediment to social progress due to his reluctance to embrace societal change. In my view, the mayor’s hesitance to adopt more progressive policies impedes the city’s evolution toward a more inclusive and forward-thinking community.\n\nOutside of my activism, I find fascination in cartography. Lost in the details of maps, I meticulously study and create intricate cartographic representations of the city’s evolving landscape. My hobby serves as both a symbolic and practical pursuit, as I envision maps not just as geographical tools but as powerful symbols of navigating societal shifts. The art of cartography becomes a metaphor for my commitment to charting a course toward a more equitable and enlightened future.
+    </string>
+
+    <string name="immanuel_desc">
+        Hello, I am Immanuel Nils, a 42-year-old disgruntled journalist with a Scandinavian heritage, settled in Dresden with a fervour for uncovering societal truths through the written word. My once-thriving career took a downturn when Mayor Reinhardt Vogel’s stringent censorship policies stifled journalistic freedom, leaving me frustrated and defenceless. Despite my background in investigative reporting, I found myself silenced by the mayor’s heavy-handed approach to the press.\n\nOutside the realm of journalism, I seek solace in classical literature, often immersed in the works of renowned authors. My bookshelves are lined with volumes of timeless classics, providing a refuge from the challenges of navigating a stifling media environment. My fervour for literature has become not only a source of intellectual stimulation but also a means of resisting the oppressive censorship policies that have dampened my journalistic spirit.
+    </string>
+
+    <string name="alexander_desc">
+        Hi, this is Alexander Philipp, a 50-year-old local artist with Bavarian aristocratic roots, immersed in the vibrant atmosphere of Dresden. A collector of rare artefacts and a fervent advocate for the arts, my creative spirit faced stifling constraints due to Mayor Reinhardt Vogel’s neglect of the city’s cultural scene. Frustrated by the lack of support for artistic endeavours, I viewed the mayor as an obstacle to the flourishing cultural landscape of Dresden.\n\nOutside the realm of art, I found solace in the simple yet profound act of gardening. My expansive garden, adorned with an array of flowers, shrubs, and greenery, became a sanctuary for me. The meticulous care I devoted to nurturing the diverse plants reflected not only a love for botanical beauty but also a desire to cultivate growth and vibrancy amid the limitations I perceived in the mayor’s approach to supporting the arts.
+    </string>
+
+
+    <string name="bridge_location_desc">
+        Local authorities have initiated a search for the mayor in the vicinity of Augustusbrücke, prompted by the discovery of some of his belongings in that area. Police do not rule out that the mayor jumped over the bridge, but due to suspicions about the four individuals mentioned, they continue to search the area for evidence.
+    </string>
+    <string name="bridge_location_question">
+        As you stand at the bridge, your attention is drawn to the presence of the mayor’s hat, resting on the ground. What thoughts or ideas could emerge about why the mayor seems to have lost his hat?
+    </string>
+    <string name="bridge_location_answer1">
+        He took his own life by jumping from the bridge, after taking his hat off.
+    </string>
+    <string name="bridge_location_answer2">
+        He was kidnapped, resulting in the loss of his hat that dropped on the ground.
+    </string>
+    <string name="bridge_location_answer3">
+        The wind blew his hat away when he was on the way to his professional duties.
+    </string>
+    <string name="bridge_location_answer4">
+        He never lost his hat; this one simply does not belong to him.
+    </string>
+    <string name="bridge_location_evidence1">
+        You have observed that the mayor is depicted employing a distinctive lighter adorned with the emblem of Jonas Metalworks, Jakob Jonas’ factory, bearing some engraved initials.
+    </string>
+    <string name="bridge_location_evidence2">
+        You get access to images captured in the vicinity of the bridge over the past two days. It reveals the consistent presence of Immanuel Nils in all these photographic records.
+    </string>
+
+    <string name="jonas_metalworks_desc">
+        Intrigued by the connections between Jakob Jonas, the mayor, and the lighter, you decide to visit Jakob at his factory. During your inquiry, Jakob denies any involvement and asserts he is unaware of the situation. Despite his response, you continue to examine the factory, still thinking about the lighter.
+    </string>
+    <string name="jonas_metalworks_question">
+        What is your analysis of the link between the unique lighter from Jonas Metalworks, bearing his initials, and its connection to the mayor’s disappearance?
+    </string>
+    <string name="jonas_metalworks_answer1">
+    The lighter was presented to the mayor as a gift by Jakob Jonas during their previous business engagements.
+    </string>
+    <string name="jonas_metalworks_answer2">
+    The mayor acquired the lighter at a charity auction, partially funded by Jonas Metalworks.
+    </string>
+    <string name="jonas_metalworks_answer3">
+    The lighter is a family heirloom within the Jonas family, typically reserved for family members; however, the mayor took hold of it under unspecified circumstances.
+    </string>
+    <string name="jonas_metalworks_answer4">
+    This antiquated lighter originates from a period when Jonas Metalworks was actively manufacturing such items.
+    </string>
+    <string name="jonas_metalworks_evidence1">
+        You just found several pamphlets from Clara Theresa’s organisation promoting protests and actions against the mayor.
+    </string>
+    <string name="jonas_metalworks_evidence2">
+        You noticed an artwork signed by Alexander Philipp hanging on the wall in Jakob’s office. You can observe that the piece features depictions of plants and berries.
+    </string>
+
+    <string name="clara_cellar_desc">
+        As your suspicions regarding Clara Theresa intensify, you find it necessary to engage in a conversation with her. Consequently, you visit her residence, but there is no response when you knock on the door. While exploring the garden, unable to establish contact with Clara, your attention is drawn to what appears to be a door partially concealed behind the bushes.
+    </string>
+    <string name="clara_cellar_question">
+        The door turns out to be the entrance to a secret cellar at the back of Clara’s residence, and it seems that the door is not locked. How do you choose to proceed?
+    </string>
+    <string name="clara_cellar_answer1">
+    You opt to await Clara Theresa’s arrival next to the cellar to interrogate her.
+    </string>
+    <string name="clara_cellar_answer2">
+    Seeking additional information about the cellar, you inquire with neighbours.
+    </string>
+    <string name="clara_cellar_answer3">
+    You choose to enter the cellar and independently explore its contents.
+    </string>
+    <string name="clara_cellar_answer4">
+    You decide to seek reinforcements and explore the cellar later accompanied by the police.
+    </string>
+    <string name="clara_cellar_evidence1">
+        Among the clutter you found letters sent between Immanuel Nils and Clara herself. The words they were writing to each other demonstrate an alliance between the two, plotting against the mayor.
+    </string>
+    <string name="clara_cellar_evidence2">
+        You observe some blueprints that capture your attention, revealing themselves to be plans of the mayor’s residence. Handwritten notes adorn the margins, distinctly differing from Clara’s handwriting. It becomes evident to you that Jakob Jonas is the author of these annotations.
+    </string>
+
+    <string name="immanuel_office_desc">
+        You feel it is vital to the case to get more information about the alleged alliance between Clara and Immanuel, so decide to visit his journalist office. Immanuel Nils has no choice but to admit that he was in contact with Clara but asserts unequivocally that they were never planning to do any harm to the mayor, let alone kidnapping him.
+    </string>
+    <string name="immanuel_office_question">
+        It seems that the letters between him and Clara Theresa are not enough to accuse Immanuel, and you need more solid evidence. How do you choose to proceed?
+    </string>
+    <string name="immanuel_office_answer1">
+    You noticed certain documents that might be relevant to the case, and you decided to secretly steal them.
+    </string>
+    <string name="immanuel_office_answer2">
+    You persist in questioning Immanuel regarding his alleged collaboration with Clara and their supposed conspiracy against the mayor.
+    </string>
+    <string name="immanuel_office_answer3">
+    You identified certain relevant documents but decided to sneak in during the night and discreetly secure them when the office is empty.
+    </string>
+    <string name="immanuel_office_answer4">
+    You attempt to persuade Immanuel to cooperate in opposition to Clara.
+    </string>
+    <string name="immanuel_office_evidence1">
+        You found some compromising files and news items proving that Immanuel Nils was manipulating information and spreading fake news trying to expose the mayor.
+    </string>
+    <string name="immanuel_office_evidence2">
+        Immanuel’s statements incriminate Alexander Philipp, as he claimed that the artist was the one spreading rumours, and that he got all the false information from Alexander himself.
+    </string>
+
+    <string name="alexander_exhibition_desc">
+        You locate Alexander Philipp while he is organising an outdoor art exhibition of his paintings, providing an opportunity to gather more information. As you inquire, he becomes visibly uneasy, placing a cigarette between his lips. To your astonishment, he reveals a lighter identical to the mayor’s, featuring the emblem of Jonas Metalworks and engraved with the initials ’JJ’</string>
+    <string name="alexander_exhibition_question">
+        You proceed with your questioning, feeling the urge to ask about the special lighter. In response, Alexander, visibly shocked, makes a sudden attempt to escape by running toward the river and diving in, seemingly intending to swim away. How do you plan to catch him?
+    </string>
+    <string name="alexander_exhibition_answer1">
+        You shout at the captain of a passing boat to stop and detain Alexander.
+    </string>
+    <string name="alexander_exhibition_answer2">
+        You enter the water and swim in pursuit of him.
+    </string>
+    <string name="alexander_exhibition_answer3">
+        Observing the situation, you steal the nearest available bicycle and ride it to the opposite side of the river.
+    </string>
+    <string name="alexander_exhibition_answer4">
+        You consider using your pistol to apprehend him.
+    </string>
+    <string name="alexander_exhibition_evidence1">
+        Alexander refutes any involvement in the mayor’s kidnapping. However, he does acknowledge receiving the lighter as a gift from Jakob Jonas, thereby confirming the alliance between the two. He asserts his lack of awareness regarding the mayor possessing the same lighter and seems unable to provide additional details.\n\nHINT: Check out the “Who is guilty?” button in the evidence list to solve the case, after having a look at all the gathered evidence.
+    </string>
+
+    <string name="mayor_office_desc">
+        The local authorities continue to place their trust in you as Saxony’s greatest detective. As you enter the mayor’s office at the city hall with the aim of resolving the case definitively, you observe the mayor’s body seated in a chair but resting on the table.
+    </string>
+    <string name="mayor_office_question">
+        What is your assessment regarding the cause of his death?
+    </string>
+    <string name="city_hall_answer1">
+        He was suffocated to death.
+    </string>
+    <string name="city_hall_answer2">
+        He experienced an overdose of his prescribed medication.
+    </string>
+    <string name="city_hall_answer3">
+        He is not dead; he is just hangover, and he needed a nap.
+    </string>
+    <string name="city_hall_answer4">
+        He was poisoned with berries.
+    </string>
+    <string name="city_hall_evidence1">
+        You discovered that the gooseberries on the mayor’s table contained poison, and there are stains of the same colour on the mayor’s hands. You identify this particular berry from Alexander Philipp’s painting hanging on the wall in Jakob Jonas’ office.\n\nHINT: Check out the “Who is guilty?” button in the evidence list to solve the case, after having a look at all the gathered evidence.
+    </string>
+
+
+
+
+
+
+    <string name="title_activity_main2">MainActivity2</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="first_correct_1">
+        After presenting the collected evidence against Alexander Philipp, it was proven that he indeed kidnapped the mayor, and Alexander is currently in prison.
+    </string>
+    <string name="first_correct_2">
+        Ultimately, he confessed to fabricating the mayor’s suicide at the bridge. Furthermore, he disclosed to the police that the mayor was being held captive in a hut within the forest near the city.
+    </string>
+    <string name="first_correct_3">
+        Thanks to your diligent investigation, the mayor has been successfully reinstated to his official duties.
+    </string>
+
+    <string name="first_incorrect_ct_1">
+        Despite aligning herself with Immanuel Nils, all of Clara’s actions adhered to legal boundaries. Her objective was to rally support against the mayor, and her organisation engaged with workers in various factories across the city, including Jonas Metalworks.
+    </string>
+    <string name="first_incorrect_ct_2">
+        Clara personally visited Jakob’s factory to distribute flyers, seizing the opportunity to steal the blueprints from his office.
+    </string>
+
+    <string name="first_incorrect_in_1">
+        Despite his alliance with Clara Theresa, all of Immanuel’s actions complied with the legal framework. His aim was to persuade a broader audience to support his cause, advocating for the freedom of the press and speech, particularly in opposition to the mayor’s policies. He never went so far as to publish fake news, and the mayor’s kidnapping was an unforeseen event for him.
+    </string>
+    <string name="first_incorrect_in_2">
+        The images of Immanuel near the bridge depict his journalistic duties rather than any involvement in the incident.
+    </string>
+
+    <string name="first_incorrect_jj_1">
+        Despite his initial inclination to remove the mayor from the equation, Jakob Jonas altered his decision at the very last minute, citing undisclosed reasons. He acknowledged engaging in reciprocal gift exchanges with Alexander Philipp, including the painting and lighter, as a manifestation of their alliance. However, Jakob asserted that all his activities remained within legal bounds.
+    </string>
+    <string name="first_incorrect_jj_2">
+        His handwritten notes on the blueprints were explained as part of the expansion plans for Jonas Metalworks, involving the cost estimation for acquiring various properties.
+    </string>
+
+
+
+    <string name="second_correct_1">
+        Clara Theresa orchestrated the mayor’s murder by poisoning him with gooseberries. After discovering Jakob’s alliance with Alexander Philipp during her visit to his factory, and with Alexander in prison, Clara believed that suspicion would fall on Jakob Jonas.
+    </string>
+    <string name="second_correct_2">
+        Utilising Alexander’s painting with berries in Jakob’s office, she devised a plan to eliminate the mayor, ensuring her and Immanuel Nils remained above suspicion.
+    </string>
+    <string name="second_correct_3">
+        Thanks to your perseverance, Clara has been arrested, placed in custody, and the residents of Dresden can now find solace.
+    </string>
+
+    <string name="second_incorrect_in_1">
+        Following the mayor’s release and Alexander Philipp’s arrest, he aimed to disassociate himself entirely from individuals suspected of opposing the mayor.
+    </string>
+    <string name="second_incorrect_in_2">
+        His objective was to ensure he avoided any further legal complications.
+    </string>
+
+    <string name="second_incorrect_jj_1">
+        The reason he backed out of any actions against the mayor stemmed from the realisation that the distinctive lighter, traditionally inherited by members of the Jonas family, was in possession of Mayor Reinhardt Vogel. It was revealed that the mayor, a member of the Jonas family who had changed his name for a political career relaunch, inherited the Jonas family emblematic item.
+    </string>
+    <string name="second_incorrect_jj_2">
+        Frustrated with familial challenges, Jakob Jonas gave his cigarette lighter to Alexander Philipp as a means of disengaging from family matters.
+    </string>
+
+
+    <string name="incorrect_3">
+        Keep a better eye on your accusations, detective.
+    </string>
+
+    <string name="newspaper">
+        The city of Dresden is in a state of shock as its esteemed mayor, Reinhardt Vogel, has gone missing under mysterious circumstances. The disappearance, reported 24 hours ago, has left citizens and authorities bewildered and concerned.\n\nSaxony’s greatest detective is leading a thorough investigation into the matter, focusing on four main suspects with potential motives. Jakob Jonas, a prominent industrialist, is under scrutiny for his clashes with the mayor over recent labour laws. Immanuel Nils, a local journalist silenced by the mayor’s censorship policies, is also a person of interest. The list extends to Alexander Philipp, an artist critical of the mayor’s stance on supporting the arts, and Clara Theresa, a charismatic political activist with her own grievances.\n\nAs the city awaits updates on the investigation, residents are urged to come forward with any information that might shed light on the mayor’s disappearance. The fate of the mayor, and the city’s stability, hangs in the balance as the detective works tirelessly to unravel the mystery.
+    </string>
+
+    <string name="start">
+        Welcome to Mayor’s Enigma.\n\nIn this game, you take on the role of a Saxon detective, who has come to the city of Dresden to solve a case for which the local authorities are unable to put the pieces together.\n\nStep into the 1920s and follow the clues answering the questions at each location to find the culprit. You must visit every location in the right order, to unlock them one by one. Once you have gathered all the necessary evidence through the locations on the map, you will have to draw your own conclusions. Good luck!
+    </string>
+
+    <string name="plot_twist_1">
+        \nThe city of Dresden awakens to a tragic and unexpected event that shakes its inhabitants once again, as they discover that the mayor has been assassinated. His body was found in his office during his work hours
+    </string>
+    <string name="plot_twist_2">
+        HINT: A new location has been unlocked. Follow the map to collect a final piece of evidence and bring closure to this case. Best of luck, Detective. The people of Dresden believe in you!
+    </string>
+
+
+    <string name="suspects_name_AF">Alexander Philipp</string>
+    <string name="suspects_name_CT">Clara Theresa</string>
+    <string name="suspects_name_IN">Immanuel Nils</string>
+    <string name="suspects_name_JJ">Jakob Jonas</string>
+
+    <string name="location_0_title">Introduction</string>
+    <string name="location_1_title">The Bridge</string>
+    <string name="location_2_title">The Metalworks</string>
+    <string name="location_3_title">The Cellar</string>
+    <string name="location_4_title">The Publisher</string>
+    <string name="location_5_title">The Art Exhibition</string>
+    <string name="location_6_title">The Town Hall</string>
+
+
+</resources>

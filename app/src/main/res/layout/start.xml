@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#28363E">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/audio_button"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_speaker_enabled" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40sp"
+
+                android:text="How it works"
+                android:textColor="#EDB777"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30sp"
+                android:justificationMode="inter_word"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/start"
+                android:textColor="#FFFF"
+                android:textSize="19sp" />
+
+            <Button
+                android:id="@+id/btn_ready"
+                android:layout_width="250sp"
+                android:layout_height="60sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="60sp"
+                android:background="@drawable/shape"
+                android:text="READY?"
+                android:textColor="#EDB777"
+                android:textSize="40sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

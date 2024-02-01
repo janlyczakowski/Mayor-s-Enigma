@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/slate_gray"
+        android:elevation="4dp"
+        app:theme="@style/ToolbarTheme"
+        app:titleTextColor="@color/deep_orange">
+
+        <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/arrow_icon"
+                android:layout_width="47dp"
+                android:layout_height="wrap_content"
+                android:onClick="onClickBackArrow"
+                android:src="@drawable/arrow_back" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/audio_button"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_speaker_enabled" />
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/slate_gray">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/pic"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:elevation="10dp"
+                    app:cardCornerRadius="15dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="0dp"
+                        android:src="@drawable/pic_clara_house" />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:id="@+id/evidence_title"
+                    style="@style/PrimaryTitle_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/pic"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="The Cellar"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/loc_desc1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/evidence_title"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:justificationMode="inter_word"
+                    android:lineSpacingExtra="2dp"
+                    android:text="@string/clara_cellar_desc"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/loc_desc2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/loc_desc1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:justificationMode="inter_word"
+                    android:lineSpacingExtra="2dp"
+                    android:text="@string/clara_cellar_question"
+                    android:textColor="@color/white" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/solve_question_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/pick_your_choice_title"
+                    style="@style/PrimaryTitle_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Pick your choice"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radio1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:buttonTint="@color/deep_orange"
+                        android:text="@string/clara_cellar_answer1"
+                        android:textColor="@color/white" />
+
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radio2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:buttonTint="@color/deep_orange"
+                        android:text="@string/clara_cellar_answer2"
+                        android:textColor="@color/white" />
+
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radio3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:buttonTint="@color/deep_orange"
+                        android:text="@string/clara_cellar_answer3"
+                        android:textColor="@color/white" />
+
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radio4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/deep_orange"
+                        android:text="@string/clara_cellar_answer4"
+                        android:textColor="@color/white" />
+
+                </RadioGroup>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_solve_evidence1"
+                    style="@style/SecondaryButton"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/button_curved_corners"
+                    android:onClick="Solve"
+                    android:text="solve"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/success_msg_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/PrimaryTitle_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="New Evidence"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/PrimaryTitle_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Various letters:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:justificationMode="inter_word"
+                    android:lineSpacingExtra="2dp"
+                    android:text="@string/clara_cellar_evidence1"
+                    android:textColor="@color/white" />
+
+
+                <TextView
+                    style="@style/PrimaryTitle_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Blueprints:"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:justificationMode="inter_word"
+                    android:lineSpacingExtra="2dp"
+                    android:text="@string/clara_cellar_evidence2"
+                    android:textColor="@color/white" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_next_location"
+                    style="@style/SecondaryButton"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/button_curved_corners"
+                    android:onClick="onClickNextLocation"
+                    android:text="next location"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
+
+
+
+
+
+

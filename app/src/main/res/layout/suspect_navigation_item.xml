@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iconSuspectNavigationItem"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="6dp"
+        android:src="@drawable/pic_alexander_philipp" />
+
+    <TextView
+        style="@style/TertriaryButton"
+        android:id="@+id/titleSuspectNavigationItem"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Alexander"
+        android:padding="3sp"
+        android:textSize="10sp"
+        android:background="@drawable/rounded_corners"
+
+        />
+
+</LinearLayout>
