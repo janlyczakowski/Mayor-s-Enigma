@@ -46,12 +46,7 @@ public class SuspectNavigationAdapter extends RecyclerView.Adapter<SuspectNaviga
         viewHolder.name.setText(suspect.getSuspectName());
         viewHolder.image.setImageResource(suspect.getSuspectImage());
 
-        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mSuspectItemClickListener.onSuspectItemClick(view, viewHolder.getAdapterPosition());
-            }
-        });
+        viewHolder.itemView.setOnClickListener(view -> mSuspectItemClickListener.onSuspectItemClick(view, viewHolder.getAdapterPosition()));
 
 
     }

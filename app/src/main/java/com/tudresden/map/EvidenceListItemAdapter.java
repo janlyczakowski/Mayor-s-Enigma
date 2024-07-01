@@ -1,14 +1,13 @@
 package com.tudresden.map;
 
 import android.content.Context;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -37,6 +36,7 @@ public class EvidenceListItemAdapter extends RecyclerView.Adapter<EvidenceListIt
 
 
     // Creates views for the RecyclerView by inflating the layout
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext())
@@ -47,7 +47,7 @@ public class EvidenceListItemAdapter extends RecyclerView.Adapter<EvidenceListIt
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, final int position) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
         System.out.println(evidenceList);
         System.out.println(locations);
         EvidenceListItem item = evidenceList.get(position);
@@ -81,12 +81,7 @@ public class EvidenceListItemAdapter extends RecyclerView.Adapter<EvidenceListIt
             viewHolder.itemView.setOnClickListener(null);
         } else {
 
-            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    mEvidenceItemClickListener.onEvidenceItemClick(view, viewHolder.getAdapterPosition());
-                }
-            });
+            viewHolder.itemView.setOnClickListener(view -> mEvidenceItemClickListener.onEvidenceItemClick(view, viewHolder.getAdapterPosition()));
         }
 
 
@@ -100,9 +95,9 @@ public class EvidenceListItemAdapter extends RecyclerView.Adapter<EvidenceListIt
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView title;
-        private TextView number;
-        private ImageView image;
+        private final TextView title;
+        private final TextView number;
+        private final ImageView image;
 
         public ViewHolder(View view) {
             super(view);

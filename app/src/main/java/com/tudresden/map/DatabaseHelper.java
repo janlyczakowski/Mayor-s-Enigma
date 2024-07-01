@@ -30,8 +30,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + DB_PATH_SUFFIX + DB_NAME;
         boolean dbExist = checkDataBase();
         SQLiteDatabase db_Read = null;
-        if (dbExist) {
-        } else {
+        if (!dbExist) {
             db_Read = this.getReadableDatabase();
             db_Read.close();
             try {
@@ -39,10 +38,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             } catch (IOException e) {
             }
         }
+
+
     }
 
     private boolean checkDataBase() {
-        SQLiteDatabase checkDB = null;
+        SQLiteDatabase checkDB;
         try {
             checkDB = SQLiteDatabase.openDatabase(DB_PATH, null,
                     SQLiteDatabase.NO_LOCALIZED_COLLATORS);
@@ -56,7 +57,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private void copyDataBase() throws IOException {
         InputStream assetsDB = myContext.getAssets().open(DB_NAME);
         File directory = new File(DB_PATH);
-        if (directory.exists() == false) {
+        if (!directory.exists()) {
             directory.mkdir();
         }
         OutputStream dbOut = new FileOutputStream(DB_PATH);

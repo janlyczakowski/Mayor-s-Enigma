@@ -4,18 +4,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatRadioButton;
-import androidx.appcompat.widget.Toolbar;
 
 public class Evidence2Activity extends AppCompatActivity {
 
@@ -68,11 +64,7 @@ public class Evidence2Activity extends AppCompatActivity {
             builder.setMessage("They did not engage in business transactions. The mayor consistently hindered Jakob’s company from advancing and expanding.");
             builder.setCancelable(false);
 
-            builder.setPositiveButton("TRY AGAIN", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    dialog.dismiss();
-                }
-            });
+            builder.setPositiveButton("TRY AGAIN", (dialog, id) -> dialog.dismiss());
 
             builder.show();
 
@@ -83,11 +75,7 @@ public class Evidence2Activity extends AppCompatActivity {
             builder.setMessage("Jakob Jonas is not renowned for his philanthropy; he would not place items in an auction without a financial motive.");
             builder.setCancelable(false);
 
-            builder.setPositiveButton("TRY AGAIN", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    dialog.dismiss();
-                }
-            });
+            builder.setPositiveButton("TRY AGAIN", (dialog, id) -> dialog.dismiss());
 
             builder.show();
 
@@ -101,33 +89,29 @@ public class Evidence2Activity extends AppCompatActivity {
             builder.setMessage("You are on the right track! Your investigation appears to be headed in a promising direction.");
             builder.setCancelable(false);
 
-            builder.setPositiveButton("CONTINUE", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
+            builder.setPositiveButton("CONTINUE", (dialog, id) -> {
 
 
-                    // New Evidence Information Dialog
-                    AlertDialog.Builder builder = new AlertDialog.Builder(Evidence2Activity.this);
-                    builder.setTitle("NEW EVIDENCE UNLOCKED");
-                    builder.setMessage("Read the new evidence and return to map to discover new location.");
-                    builder.setCancelable(false);
+                // New Evidence Information Dialog
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(Evidence2Activity.this);
+                builder1.setTitle("NEW EVIDENCE UNLOCKED");
+                builder1.setMessage("Read the new evidence and return to map to discover new location.");
+                builder1.setCancelable(false);
 
-                    builder.setNegativeButton("CLOSE", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
+                builder1.setNegativeButton("CLOSE", (dialog1, id1) -> {
 
-                            // increment the next location id
-                            int currentNextLocationId = MapActivity.getNextLocationId(getApplicationContext());
-                            currentNextLocationId++;
-                            MapActivity.setNextLocationId(getApplicationContext(), currentNextLocationId);
+                    // increment the next location id
+                    int currentNextLocationId = MapActivity.getNextLocationId(getApplicationContext());
+                    currentNextLocationId++;
+                    MapActivity.setNextLocationId(getApplicationContext(), currentNextLocationId);
 
-                            findViewById(R.id.solve_question_panel).setVisibility(View.GONE);
-                            findViewById(R.id.success_msg_panel).setVisibility(View.VISIBLE);
-                            dialog.dismiss();
-                        }
-                    });
-                    builder.show();
+                    findViewById(R.id.solve_question_panel).setVisibility(View.GONE);
+                    findViewById(R.id.success_msg_panel).setVisibility(View.VISIBLE);
+                    dialog1.dismiss();
+                });
+                builder1.show();
 
 
-                }
             });
 
             builder.show();
@@ -139,11 +123,7 @@ public class Evidence2Activity extends AppCompatActivity {
             builder.setMessage("The production of lighters at Jonas Metalworks ceased due to safety concerns, resulting in their complete discontinuation and a banning order by the authorities.");
             builder.setCancelable(false);
 
-            builder.setPositiveButton("TRY AGAIN", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    dialog.dismiss();
-                }
-            });
+            builder.setPositiveButton("TRY AGAIN", (dialog, id) -> dialog.dismiss());
 
             builder.show();
 

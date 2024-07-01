@@ -10,7 +10,6 @@ public class SharedPreferencesHelper {
 
     private static final String PREF_LOCATIONS = "locations";
     private static final String PREF_MAP_RECREATED = "isMapRecreated";
-    private static final String PREF_EVIDENCE_LIST_RECREATED = "isEvidenceListRecreated";
 
     public static void saveLocations(Context context, ArrayList<PlaceModal> arrayList) {
         Gson gson = new Gson();
@@ -37,9 +36,8 @@ public class SharedPreferencesHelper {
     }
     public static Boolean getIsMapRecreated(Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(PREF_MAP_RECREATED, Context.MODE_PRIVATE);
-        boolean isMapRecreated = sharedPreferences.getBoolean(PREF_MAP_RECREATED, false);
 
-        return isMapRecreated;
+        return sharedPreferences.getBoolean(PREF_MAP_RECREATED, false);
     }
 
 

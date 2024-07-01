@@ -14,15 +14,8 @@ public class Suspect {
         return suspectImage;
     }
 
-    public void setSuspectImage(int suspectImage){
-        this.suspectImage = suspectImage;
-    }
-
     public String getSuspectName(){
         return suspectName;
     }
 
-    public void setSuspectName(String suspectName){
-        this.suspectName = suspectName;
-    }
 }

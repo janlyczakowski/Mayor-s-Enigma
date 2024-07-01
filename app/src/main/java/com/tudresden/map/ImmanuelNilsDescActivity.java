@@ -2,12 +2,10 @@ package com.tudresden.map;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+
 
 public class ImmanuelNilsDescActivity extends AppCompatActivity {
 

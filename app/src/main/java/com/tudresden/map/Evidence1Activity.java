@@ -1,11 +1,9 @@
 package com.tudresden.map;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -13,9 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatRadioButton;
-import androidx.appcompat.widget.Toolbar;
 
-import org.w3c.dom.Text;
 
 public class Evidence1Activity extends AppCompatActivity {
     MediaPlayer mediaPlayer;
@@ -74,11 +70,7 @@ public class Evidence1Activity extends AppCompatActivity {
             builder.setMessage("This assertion is inaccurate, given his esteemed status as a prominent and promising mayor of Dresden. He was held in high regard by the community, and there were no discernible personal motivations for such a drastic action.");
             builder.setCancelable(false);
 
-            builder.setPositiveButton("TRY AGAIN", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    dialog.dismiss();
-                }
-            });
+            builder.setPositiveButton("TRY AGAIN", (dialog, id) -> dialog.dismiss());
 
             builder.show();
 
@@ -92,35 +84,31 @@ public class Evidence1Activity extends AppCompatActivity {
             builder.setMessage("A plausible scenario for further investigation, detective. You unlocked the next location on the map. Keep on going!");
             builder.setCancelable(false);
 
-            builder.setPositiveButton("CONTINUE", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
+            builder.setPositiveButton("CONTINUE", (dialog, id) -> {
 
 
-                    // New Evidence Information Dialog
-                    AlertDialog.Builder builder = new AlertDialog.Builder(Evidence1Activity.this);
-                    builder.setTitle("NEW EVIDENCE UNLOCKED");
-                    builder.setMessage("Read the new evidence and return to map to discover new location.");
+                // New Evidence Information Dialog
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(Evidence1Activity.this);
+                builder1.setTitle("NEW EVIDENCE UNLOCKED");
+                builder1.setMessage("Read the new evidence and return to map to discover new location.");
 
-                    builder.setCancelable(false);
+                builder1.setCancelable(false);
 
-                    builder.setNegativeButton("CLOSE", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
+                builder1.setNegativeButton("CLOSE", (dialog1, id1) -> {
 
-                            // increment the next location id
-                            int currentNextLocationId = MapActivity.getNextLocationId(getApplicationContext());
-                            currentNextLocationId++;
-                            MapActivity.setNextLocationId(getApplicationContext(), currentNextLocationId);
+                    // increment the next location id
+                    int currentNextLocationId = MapActivity.getNextLocationId(getApplicationContext());
+                    currentNextLocationId++;
+                    MapActivity.setNextLocationId(getApplicationContext(), currentNextLocationId);
 
-                            findViewById(R.id.solve_question_panel).setVisibility(View.GONE);
-                            findViewById(R.id.success_msg_panel).setVisibility(View.VISIBLE);
-                            dialog.dismiss();
+                    findViewById(R.id.solve_question_panel).setVisibility(View.GONE);
+                    findViewById(R.id.success_msg_panel).setVisibility(View.VISIBLE);
+                    dialog1.dismiss();
 
 
-                        }
-                    });
-                    builder.show();
+                });
+                builder1.show();
 
-                }
             });
 
             builder.show();
@@ -132,11 +120,7 @@ public class Evidence1Activity extends AppCompatActivity {
             builder.setMessage("The mayor, known for his appreciation of his personal belongings, would not have left his hat behind willingly. Consider alternative explanations for the hat's displacement.");
             builder.setCancelable(false);
 
-            builder.setPositiveButton("TRY AGAIN", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    dialog.dismiss();
-                }
-            });
+            builder.setPositiveButton("TRY AGAIN", (dialog, id) -> dialog.dismiss());
 
             builder.show();
 
@@ -147,11 +131,7 @@ public class Evidence1Activity extends AppCompatActivity {
             builder.setMessage("The hat, adorned with the city hall pin and embroidered with the mayor's name, unequivocally identifies it as belonging to the mayor.");
             builder.setCancelable(false);
 
-            builder.setPositiveButton("TRY AGAIN", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    dialog.dismiss();
-                }
-            });
+            builder.setPositiveButton("TRY AGAIN", (dialog, id) -> dialog.dismiss());
 
             builder.show();
         }

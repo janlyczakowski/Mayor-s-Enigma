@@ -2,15 +2,10 @@ package com.tudresden.map;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
+
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.VibrationEffect;
-import android.os.Vibrator;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,21 +21,34 @@ public class MainActivity extends AppCompatActivity {
 
         audio_button = findViewById(R.id.audio_button);
         mediaPlayer = MediaPlayer.create(this, R.raw.instruction);
-        Utils.setAudioOnClickListener(mediaPlayer, audio_button);
+//        Utils.setAudioOnClickListener(mediaPlayer, audio_button);
+        setAudioOnClickListener(mediaPlayer,audio_button);
         Utils.setOnAudioCompletionListener(mediaPlayer,audio_button);
 
         Button btn = findViewById(R.id.btn_ready);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mediaPlayer.isPlaying()) {
-                    mediaPlayer.stop();
-                }
-                Intent intent = new Intent(MainActivity.this, Newspaper.class);
-                startActivity(intent);
+        btn.setOnClickListener(v -> {
+            if (mediaPlayer.isPlaying()) {
+                mediaPlayer.stop();
             }
+            Intent intent = new Intent(MainActivity.this, Newspaper.class);
+            startActivity(intent);
         });
     }
+
+        public void setAudioOnClickListener(final MediaPlayer mediaPlayer, de.hdodenhof.circleimageview.CircleImageView audio_icon) {
+            audio_icon.setOnClickListener(v -> {
+                if (!mediaPlayer.isPlaying()) {
+                    mediaPlayer.start();
+                    audio_icon.setImageResource(R.drawable.pause_icon);
+                } else {
+                    mediaPlayer.pause();
+                    audio_icon.setImageResource(R.drawable.play_icon);
+                }
+            }
+            );
+
+        }
+
 
     @Override
     protected void onResume() {
@@ -48,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         audio_button = findViewById(R.id.audio_button);
         audio_button.setImageResource(R.drawable.ic_speaker_enabled);
         mediaPlayer = MediaPlayer.create(this, R.raw.instruction);
-        Utils.setAudioOnClickListener(mediaPlayer, audio_button);
+        setAudioOnClickListener(mediaPlayer, audio_button);
         Utils.setOnAudioCompletionListener(mediaPlayer,audio_button);
     }
 
@@ -61,12 +69,3 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
-//    public void onClickStartListener(View view) {
-//
-//        if (mediaPlayer.isPlaying()) {
-//            mediaPlayer.stop();
-//        }
-//            Intent intent = new Intent(MainActivity.this, Newspaper.class);
-//            startActivity(intent);
-//
-//    }

@@ -6,7 +6,6 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -15,7 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatRadioButton;
-import androidx.appcompat.widget.Toolbar;
+
 
 public class Evidence4Activity extends AppCompatActivity {
 
@@ -72,31 +71,27 @@ int i;
             builder.setMessage("Brave move! New leads bring you closer to solving the case.");
             builder.setCancelable(false);
 
-            builder.setPositiveButton("CONTINUE", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
+            builder.setPositiveButton("CONTINUE", (dialog, id) -> {
 
-                    // New Evidence Information Dialog
-                    AlertDialog.Builder builder = new AlertDialog.Builder(Evidence4Activity.this);
-                    builder.setTitle("NEW EVIDENCE UNLOCKED");
-                    builder.setMessage("Read the new evidence and return to map to discover new location.");
-                    builder.setCancelable(false);
+                // New Evidence Information Dialog
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(Evidence4Activity.this);
+                builder1.setTitle("NEW EVIDENCE UNLOCKED");
+                builder1.setMessage("Read the new evidence and return to map to discover new location.");
+                builder1.setCancelable(false);
 
-                    builder.setNegativeButton("CLOSE", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
+                builder1.setNegativeButton("CLOSE", (dialog1, id1) -> {
 
-                            // increment the next location id
-                            int currentNextLocationId = MapActivity.getNextLocationId(getApplicationContext());
-                            currentNextLocationId++;
-                            MapActivity.setNextLocationId(getApplicationContext(), currentNextLocationId);
+                    // increment the next location id
+                    int currentNextLocationId = MapActivity.getNextLocationId(getApplicationContext());
+                    currentNextLocationId++;
+                    MapActivity.setNextLocationId(getApplicationContext(), currentNextLocationId);
 
-                            findViewById(R.id.solve_question_panel).setVisibility(View.GONE);
-                            findViewById(R.id.success_msg_panel).setVisibility(View.VISIBLE);
-                            dialog.dismiss();
-                        }
-                    });
-                    builder.show();
+                    findViewById(R.id.solve_question_panel).setVisibility(View.GONE);
+                    findViewById(R.id.success_msg_panel).setVisibility(View.VISIBLE);
+                    dialog1.dismiss();
+                });
+                builder1.show();
 
-                }
             });
             builder.show();
 
@@ -108,11 +103,7 @@ int i;
             builder.setMessage("He becomes agitated and loses his nerves, refusing to respond to any additional questions and forcing you to leave. You seem to have missed a good opportunity.");
             builder.setCancelable(false);
 
-            builder.setPositiveButton("TRY AGAIN", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    dialog.dismiss();
-                }
-            });
+            builder.setPositiveButton("TRY AGAIN", (dialog, id) -> dialog.dismiss());
 
             builder.show();
 
@@ -123,11 +114,7 @@ int i;
             builder.setMessage("Upon your return later that night, you discover that the folder containing the documents has disappeared. The wait-and-see tactic is not working, it is sometimes better to act on the spot.");
             builder.setCancelable(false);
 
-            builder.setPositiveButton("TRY AGAIN", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    dialog.dismiss();
-                }
-            });
+            builder.setPositiveButton("TRY AGAIN", (dialog, id) -> dialog.dismiss());
 
             builder.show();
 
@@ -138,11 +125,7 @@ int i;
             builder.setMessage("While initially agreeing to collaborate, all of his provided testimony proves to be inaccurate and intentionally misleading, suggesting an attempt to hinder the investigation.");
             builder.setCancelable(false);
 
-            builder.setPositiveButton("TRY AGAIN", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    dialog.dismiss();
-                }
-            });
+            builder.setPositiveButton("TRY AGAIN", (dialog, id) -> dialog.dismiss());
 
             builder.show();
 
@@ -174,15 +157,12 @@ int i;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-
-                // Navigate back
-                onBackPressed();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == android.R.id.home) {
+            // Navigate back
+            onBackPressed();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
 }

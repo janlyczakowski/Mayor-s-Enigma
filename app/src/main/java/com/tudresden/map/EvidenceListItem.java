@@ -15,21 +15,12 @@ public class EvidenceListItem {
         return locationImage;
     }
 
-    public void setLocationImage(int locationImage) {
-        this.locationImage = locationImage;
-    }
     public int getLocationTitle(){
         return locationTitle;
     }
 
-    public void setLocationTitle(int locationTitle) {
-        this.locationTitle = locationTitle;
-    }
     public String getLocationNumber(){
         return locationNumber;
     }
 
-    public void setLocationNumber(String locationNumber) {
-        this.locationNumber = locationNumber;
-    }
 }

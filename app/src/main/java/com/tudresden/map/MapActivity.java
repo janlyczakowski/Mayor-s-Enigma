@@ -18,7 +18,6 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -30,36 +29,24 @@ import android.provider.Settings;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.Circle;
-import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.gson.Gson;
 import com.google.maps.android.SphericalUtil;
 
 import java.io.IOException;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+
 
 public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
     DatabaseHelper dbHelper = new DatabaseHelper(this);
@@ -117,7 +104,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         newLocations.get(nextLocationId).setVisited(true);
                         SharedPreferencesHelper.saveLocations(getApplicationContext(), newLocations);
 
-                        Toast toast = Toast.makeText(getApplicationContext(), "Location visited", 1);
+                        Toast toast = Toast.makeText(getApplicationContext(), "Location visited", Toast.LENGTH_LONG);
                         toast.show();
 
                         // add shake event
@@ -193,7 +180,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     }
 
     @Override
-    public void onMapReady(GoogleMap map) {
+    public void onMapReady(@NonNull GoogleMap map) {
         SharedPreferencesHelper.saveIsMapRecreated(getApplicationContext(),true);
         mMap = map;
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
@@ -256,8 +243,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             do {
                 // on below line we are adding the data from
                 // cursor to our array list.
-                Boolean visited_value = (dbCursor.getInt(visited_index) == 0) ? false : true;
-                nextLocationId = visited_value == true ? dbCursor.getInt(index) - 1 : nextLocationId;
+                boolean visited_value = dbCursor.getInt(visited_index) != 0;
+                nextLocationId = visited_value ? dbCursor.getInt(index) - 1 : nextLocationId;
                 placeModalArrayList.add(new PlaceModal(
                         dbCursor.getString(name_index),
                         dbCursor.getDouble(latitude_index),
@@ -314,12 +301,11 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         Bitmap scaledBitmap = Bitmap.createScaledBitmap(bitmap, 60, 90, false);
 
         // create the marker
-        MarkerOptions myMarker = new MarkerOptions()
+
+        return new MarkerOptions()
                 .icon(BitmapDescriptorFactory.fromBitmap(scaledBitmap))
                 .position(new LatLng(lat, lon))
                 .title(name);
-
-        return myMarker;
 
     }
 
@@ -334,13 +320,10 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
                 if (lastKnownLocation == null) {
                     // Request location updates with a listener
-                    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 2, new LocationListener() {
-                        @Override
-                        public void onLocationChanged(@NonNull Location location) {
-                            // Remove location updates to save power, as we only need the current location once
-                            // Use the current location
-                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 17));
-                        }
+                    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 2, location -> {
+                        // Remove location updates to save power, as we only need the current location once
+                        // Use the current location
+                        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 17));
                     });
                 } else {
                     mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude()), 17));
